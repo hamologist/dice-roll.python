@@ -1,0 +1,22 @@
+[project]
+name = "dice-roll"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "fastapi[standard]>=0.119.0",
+]
+
+[dependency-groups]
+dev = [
+    "pyproject-runner>=0.3.0",
+    "pyright>=1.1.406",
+    "ruff>=0.14.1",
+]
+
+[tool.pyproject-runner.tasks]
+dev = "fastapi dev src/main.py --port=3000 --host=0.0.0.0"
+types = "pyright src/"
+lint = "ruff check src/"
+fix = "ruff format src/"
