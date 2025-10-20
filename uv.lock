@@ -60,21 +60,23 @@ version = "0.1.0"
 source = { virtual = "." }
 dependencies = [
     { name = "fastapi", extra = ["standard"] },
+    { name = "typer" },
 ]
 
 [package.dev-dependencies]
 dev = [
-    { name = "pyproject-runner" },
     { name = "pyright" },
     { name = "ruff" },
 ]
 
 [package.metadata]
-requires-dist = [{ name = "fastapi", extras = ["standard"], specifier = ">=0.119.0" }]
+requires-dist = [
+    { name = "fastapi", extras = ["standard"], specifier = ">=0.119.0" },
+    { name = "typer", specifier = ">=0.19.2" },
+]
 
 [package.metadata.requires-dev]
 dev = [
-    { name = "pyproject-runner", specifier = ">=0.3.0" },
     { name = "pyright", specifier = ">=1.1.406" },
     { name = "ruff", specifier = ">=0.14.1" },
 ]
@@ -401,18 +403,6 @@ source = { registry = "https://pypi.org/simple" }
 sdist = { url = "https://files.pythonhosted.org/packages/b0/77/a5b8c569bf593b0140bde72ea885a803b82086995367bf2037de0159d924/pygments-2.19.2.tar.gz", hash = "sha256:636cb2477cec7f8952536970bc533bc43743542f70392ae026374600add5b887", size = 4968631, upload-time = "2025-06-21T13:39:12.283Z" }
 wheels = [
     { url = "https://files.pythonhosted.org/packages/c7/21/705964c7812476f378728bdf590ca4b771ec72385c533964653c68e86bdc/pygments-2.19.2-py3-none-any.whl", hash = "sha256:86540386c03d588bb81d44bc3928634ff26449851e99741617ecb9037ee5ec0b", size = 1225217, upload-time = "2025-06-21T13:39:07.939Z" },
-]
-
-[[package]]
-name = "pyproject-runner"
-version = "0.3.0"
-source = { registry = "https://pypi.org/simple" }
-dependencies = [
-    { name = "click" },
-]
-sdist = { url = "https://files.pythonhosted.org/packages/c3/36/e8e1f0742978f07ddbdc347ffd8fa87287d161e8e3eac91fc29403d16786/pyproject_runner-0.3.0.tar.gz", hash = "sha256:f65e1c66c03d50db6244df21c80471f3b5d78fd5bdc22cae22cb381592efaf05", size = 39496, upload-time = "2025-01-27T22:59:16.573Z" }
-wheels = [
-    { url = "https://files.pythonhosted.org/packages/a8/c0/f10dcc0f5a535a7cdd761e61ee08d4842f04329f4898aed5710813248499/pyproject_runner-0.3.0-py3-none-any.whl", hash = "sha256:c47855c5a98f06fbfe2e06051b2c42a7042c099a928d08eaf4c1b52ec75b2ee3", size = 23427, upload-time = "2025-01-27T22:59:15.359Z" },
 ]
 
 [[package]]

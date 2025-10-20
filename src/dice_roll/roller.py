@@ -1,7 +1,6 @@
 from random import randint
 from dataclasses import dataclass
 from typing import Annotated
-from fastapi import FastAPI
 from pydantic import AfterValidator, BaseModel, StrictInt
 
 
@@ -45,16 +44,12 @@ class RollResponse:
     step: list[Step]
 
 
-app = FastAPI()
-
-
-@app.post("/")
-def roll_dice(rollRequest: RollRequest):
+def roll_dice(roll_request: RollRequest):
     payload = RollResponse(step=[])
 
-    for _ in range(0, rollRequest.count):
+    for _ in range(0, roll_request.count):
         step = Step(rolls=[], total=0)
-        for dice in rollRequest.dice:
+        for dice in roll_request.dice:
             rolls = []
             rollsTotal = dice.modifier
             for _ in range(0, dice.count):
