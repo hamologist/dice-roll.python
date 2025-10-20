@@ -1,14 +1,26 @@
 # Dice Roll
 **Dice Roll** is a simple Python package for simulating dice rolls with varying sides and counts.
+The package includes both an API and CLI frontend for running the dice roll logic.
 
 ## Installation
-To install and start using dice-roll you'll first need [uv](https://docs.astral.sh/uv/) installed on your machine.
-After that you can install both the API and CLI frontends using:
+You can install the package directly to your machine using pip:
+
+**Pure Pip**
+```bash
+$ pip install git+https://github.com/hamologist/dice-roll.git
+```
+**uv based**
 ```bash
 $ uv tool install git+https://github.com/hamologist/dice-roll.git@main
 ```
 
 Likewise, you can uninstall the application using:
+
+**Pure pip**
+```bash
+$ pip uninstall dice-roll
+```
+**uv based**
 ```bash
 $ uv tool uninstall dice-roll
 ```
