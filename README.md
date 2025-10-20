@@ -3,11 +3,13 @@
 The package includes both an API and CLI frontend for running the dice roll logic.
 
 ## Installation
+
+### Local Installation
 You can install the package directly to your machine using pip:
 
 **Pure Pip**
 ```bash
-$ pip install git+https://github.com/hamologist/dice-roll.git
+$ pip install git+https://github.com/hamologist/dice-roll.git@main
 ```
 **uv based**
 ```bash
@@ -23,6 +25,30 @@ $ pip uninstall dice-roll
 **uv based**
 ```bash
 $ uv tool uninstall dice-roll
+```
+
+### Docker
+You can also install and run the package using Docker like so:
+
+First, build the image for the package:
+```bash
+$ docker build -t dice-roll https://github.com/hamologist/dice-roll.git#main
+```
+
+Next, run a container using the image you built:
+```bash
+$ docker run -p 8000:8000 --rm dice-roll
+```
+This will run the `dice-roll-api` command (further detailed below) on host 0.0.0.0 and port 8000.
+
+If you'd rather run the `dice-roll-cli`, you can do so using:
+```bash
+$ docker run --rm -it dice-roll /bin/sh
+```
+This will connect you to an interactive shell on the `dice-roll` container.
+You can then run the `dice-roll-cli` using the following:
+```bash
+$ echo '{"dice": [{"count": 1, "sides": 20, "modifier": 1}], "count": 1}' | dice-roll-cli
 ```
 
 ## Usage
