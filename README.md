@@ -13,7 +13,7 @@ $ pip install git+https://github.com/hamologist/dice-roll.git@main
 ```
 **uv based**
 ```bash
-$ uv tool install git+https://github.com/hamologist/dice-roll.git@main
+$ uv tool install git+https://github.com/hamologist/dice-roll.python.git@main
 ```
 
 Likewise, you can uninstall the application using:
